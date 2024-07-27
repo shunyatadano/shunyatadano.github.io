@@ -11,5 +11,5 @@ redirect_from:
 
 Feel free to reach out to me via email or through my social media profiles.
 
-- Email: [tadano.shunya.r4@dc.tohoku.ac.jp]
+- Email: tadano.shunya.r4[at]dc.tohoku.ac.jp
 - [LinkedIn](https://www.linkedin.com/in/shunya-tadano-b602a9267/)
