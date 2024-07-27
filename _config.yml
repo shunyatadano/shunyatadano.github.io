@@ -22,9 +22,7 @@ repository               : "shunyatadano/shunyatadano.github.io"
 author:
   # Biographic information
   avatar           : "profile_menkoi.jpg"
-  name             : |
-    只野竣也 
-    Shunya Tadano
+  name             : 只野竣也 (Shunya Tadano)"
   pronouns         : # example: "she/her"  
   bio              : "A master student in Robotics"
   location         : "Sendai, Japan"
