@@ -21,7 +21,7 @@ repository               : "shunyatadano/shunyatadano.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile_menkoi.jpg"
   name             : "Shunya Tadano"
   pronouns         : # example: "she/her"  
   bio              : "A master student in Robotics"
