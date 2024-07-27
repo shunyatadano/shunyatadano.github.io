@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hello! I am Shunya Tadano, a master student at [Tohoku University](https://www.tohoku.ac.jp/en/), Japan. I specialize in Robotics. My work focuses on Pedestrian Prediction Considering Uncertainty.
+**Shunya Tadano** is a master student at [Tohoku University](https://www.tohoku.ac.jp/en/), Japan. I specialize in Robotics. My work focuses on Pedestrian Prediction Considering Uncertainty.
 
 Research Interest
 ======
