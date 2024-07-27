@@ -20,4 +20,4 @@ Coming soon...
 
 Contact
 ------
-Feel free to reach out to me at [tadano.shunya.r4@dc.tohoku.ac.jp] for any inquiries or collaboration opportunities.
+Feel free to reach out to me at tadano.shunya.r4[at]dc.tohoku.ac.jp for any inquiries or collaboration opportunities.
