@@ -38,11 +38,11 @@ Skills
 
 Publications
 ======
-  ...
+  Coming soon...
   
 Talks
 ======
-  <...
+  Coming soon...
   
 Teaching
 ======
