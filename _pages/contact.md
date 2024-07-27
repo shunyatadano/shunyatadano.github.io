@@ -7,8 +7,6 @@ redirect_from:
   - /contact.html
 ---
 
-# Contact
-
 Feel free to reach out to me via email or through my social media profiles.
 
 - Email: tadano.shunya.r4[at]dc.tohoku.ac.jp
