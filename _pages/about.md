@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
@@ -8,10 +8,11 @@ redirect_from:
 ---
 Hello! I am Shunya Tadano, a master student at [Tohoku University](https://www.tohoku.ac.jp/en/). I specialize in Robotics. My work focuses on Pedestrian Prediction Considering Uncertainty.
 
-My work and research
+Research Interest
 ======
-I am an interpretive social scientist trained as an ethnographer, with a broad background in the humanities — but I have just enough expertise in computer science and data science to make trouble. I consider myself a methodological and disciplinary pluralist, as I draw from and contribute to many different academic disciplines. I use a broad range of qualitative, quantitative, and computational methods to holistically investigate the role of science and technology in our society, culture, politics, and economy. I have a particular focus on decentralized communities and institutions, such as open source software, scientific research, peer production platforms (like Wikipedia), and social media sites.
-
+- Pedestrian Prediction
+- Robot Navigation
+- Human-Robot-Interaction
 
 Getting started
 ======
