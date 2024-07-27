@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "只野 竣也\nShunya Tadano"
+title                    : "Shunya Tadano"
 title_separator          : "-"
-name                     : &name "Shunya Tadano"
+name                     : &name "只野 竣也 (Shunya Tadano)"
 description              : &description "personal description"
 url                      : https://shunyatadano.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
