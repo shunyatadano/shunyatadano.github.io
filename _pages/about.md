@@ -17,14 +17,6 @@ Research Interest
 Recent News
 ======
 Coming soon...
-<div class="news-container">
-  <ul class="news-list">
-    <li>2024-07-27: Published a new paper on AI in healthcare.</li>
-    <li>2024-06-15: Gave a talk at the International Conference on Machine Learning.</li>
-    <li>2024-05-20: Started a new research project on neural networks.</li>
-    <!-- ここに追加のニュースを追加できます -->
-  </ul>
-</div>
 
 Contact
 ------
