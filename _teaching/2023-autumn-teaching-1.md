@@ -1,5 +1,5 @@
 ---
-title: "Teaching experience 1"
+title: "Teaching Assistant"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2023-autumn-teaching
