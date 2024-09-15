@@ -5,7 +5,7 @@ permalink: /publication/2024-05-16-pedestrian-trajectory-prediction-with-pose-es
 excerpt: 'This proceeding is about a poster session.'
 date: 2022-06-01
 venue: '2024 IEEE International Conference on Robotics and Automation, Late Breaking Result Poster'
-paperurl: 'https://www.jstage.jst.go.jp/browse/jsmermd/-char/ja'
+# paperurl: ''
 citation: 'Shunya TADANO, Yusuke TAMURA, Yasuhisa HIRATA (2022). &quot;Pedestrian Trajectory Prediction with Pose Estimation and Monte Carlo Dropout.&quot; <i>2024 IEEE International Conference on Robotics and Automation, Late Breaking Result Poster, ThAL-EX.17</i>. 1(3).'
 ---
 
