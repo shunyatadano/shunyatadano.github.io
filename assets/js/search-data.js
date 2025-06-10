@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-publications",
           title: "publications",
-          description: "For a complete and updated list of all publications, check out my profile on Google Scholar.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -50,8 +50,14 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-this-website-has-been-launched",
-          title: 'This website has been launched',
+            },},{id: "news-this-website-has-been-launched-ウェブサイトを立ち上げました",
+          title: 'This website has been launched🚀  ウェブサイトを立ち上げました！',
+          description: "",
+          section: "News",},{id: "news-an-interview-article-has-been-published-in-the-journal-of-the-robotics-society-of-japan-日本ロボット学会誌にインタビュー記事が掲載されました-詳細はpublicationsをご覧ください",
+          title: 'An interview article has been published in the Journal of the Robotics Society...',
+          description: "",
+          section: "News",},{id: "news-we-presented-a-poster-at-robomech2025-robomech2025にて1件のポスター発表を行いました-詳細はpublicationsをご覧ください",
+          title: 'We presented a poster at ROBOMECH2025🚀  ROBOMECH2025にて1件のポスター発表を行いました。     詳細はpublicationsをご覧ください。',
           description: "",
           section: "News",},{
         id: 'social-email',
