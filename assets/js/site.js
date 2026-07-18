@@ -1,11 +1,65 @@
 (() => {
+  const root = document.documentElement;
   const header = document.querySelector('[data-header]');
+  const themeToggle = document.querySelector('[data-theme-toggle]');
+  const themeColor = document.querySelector('meta[name="theme-color"]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-menu]');
   const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
+  const themeStorageKey = 'shunya-theme';
+  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getActiveTheme = () => {
+    if (root.dataset.theme === 'light' || root.dataset.theme === 'dark') {
+      return root.dataset.theme;
+    }
+
+    return darkQuery.matches ? 'dark' : 'light';
+  };
+
+  const updateThemeInterface = () => {
+    const activeTheme = getActiveTheme();
+    const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
+
+    root.style.colorScheme = activeTheme;
+
+    if (themeColor) {
+      themeColor.content = activeTheme === 'dark' ? '#11171c' : '#fafaf8';
+    }
+
+    if (themeToggle) {
+      const label = `Switch to ${nextTheme === 'dark' ? 'night' : 'light'} mode`;
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.setAttribute('aria-pressed', String(activeTheme === 'dark'));
+      themeToggle.title = label;
+    }
+
+  };
+
+  const setTheme = (theme) => {
+    root.dataset.theme = theme;
+
+    try {
+      window.localStorage.setItem(themeStorageKey, theme);
+    } catch (error) {
+      // The selected theme still applies for this page when storage is unavailable.
+    }
+
+    updateThemeInterface();
+  };
+
+  themeToggle?.addEventListener('click', () => {
+    setTheme(getActiveTheme() === 'dark' ? 'light' : 'dark');
+  });
+
+  darkQuery.addEventListener?.('change', () => {
+    if (!root.dataset.theme) updateThemeInterface();
+  });
+
+  updateThemeInterface();
 
   const closeMenu = ({ restoreFocus = false } = {}) => {
     if (!menuToggle || !menu) return;
