@@ -19,7 +19,8 @@ shunyatadano.github.io/
 │   ├── js/
 │   │   └── site.js              # モバイルメニュー、現在位置表示
 │   ├── images/
-│   │   └── shunya.jpg           # ファーストビューのプロフィール画像
+│   │   ├── shunya.jpg           # ファーストビューのプロフィール画像
+│   │   └── publications/        # 発表・論文の研究画像
 │   └── files/
 │       └── .gitkeep             # CVなどダウンロードファイルの格納場所
 ├── docs/
@@ -119,11 +120,10 @@ Branch: main / (root)
 
 | セクション | ID | 主な内容 |
 | --- | --- | --- |
-| Home | `#home` | 氏名、所属、紹介、連絡・プロフィールリンク、CV |
+| Home | `#home` | 氏名、所属、研究テーマ、連絡・プロフィールリンク、CV |
 | Recent News | `#news` | 最新ニュース |
 | Publications | `#publications` | 発表・記事一覧 |
-| Profile | `#profile` | 学歴・受賞 |
-| Contact | `#contact` | メール・SNS・研究者プロフィール |
+| Profile | `#profile` | 学歴・職歴・受賞 |
 
 セクションIDはヘッダーリンクやページ内リンクから参照されています。変更する場合は、`href="#..."` 側も同時に更新してください。
 
@@ -134,17 +134,9 @@ Branch: main / (root)
 主な対象:
 
 - `h1`: 英語氏名
-- `.hero__name-ja`: 日本語氏名
 - `.hero__role`: 所属・職位
-- `.hero__intro`: 自己紹介
-- `.hero__affiliation`: 所在地・研究室リンク
+- `.hero__research`: 研究テーマ
 - `.hero__links`: Email、GitHub、LinkedIn、X、Google Scholar、researchmap、CV
-
-ページ下部の更新年月は、次の表示も手動で更新します。
-
-```html
-<span>Updated 07.2026</span>
-```
 
 ### ニュースを追加する
 
@@ -217,12 +209,13 @@ Branch: main / (root)
 - 各グループ見出しの `01 item`、`06 items` などは自動計算ではないため、件数を手動で直します。
 - 発表番号、巻、号、ページ、年も元資料と照合します。
 
-### 学歴・受賞を更新する
+### 学歴・職歴・受賞を更新する
 
 `id="profile"` 内を編集します。
 
-- 学歴: `.timeline`
-- 受賞: `.award-list`
+- 学歴: `aria-labelledby="education-title"` の `.profile-list`
+- 職歴: `aria-labelledby="employment-title"` の `.profile-list`
+- 受賞: `aria-labelledby="awards-title"` の `.profile-list`
 
 新しい項目は上に追加し、年の新しい順に並べます。
 
@@ -231,14 +224,12 @@ Branch: main / (root)
 同じリンクが次の場所にあります。
 
 1. Homeの `.hero__links`
-2. Contactの `.contact-links`
-3. `<head>` 内のPerson構造化データ `sameAs`
+2. `<head>` 内のPerson構造化データ `sameAs`
 
 URLを変更するときは3か所を確認してください。メールアドレスは、次の場所にもあります。
 
 - `<meta>` ではなくJSON-LD内の `email`
 - Homeの `mailto:`
-- Contactの `mailto:` と表示テキスト
 
 SNSアイコンは `index.html` 冒頭の `.icon-sprite` 内で定義しています。既存サービスのリンク変更だけであれば、SVG部分を編集する必要はありません。
 
@@ -261,7 +252,7 @@ SNSアイコンは `index.html` 冒頭の `.icon-sprite` 内で定義してい�
 
 ```html
 <img
-  class="profile-visual reveal reveal--first"
+  class="profile-visual"
   src="assets/images/shunya.jpg"
   alt="Portrait of Shunya Tadano"
   width="1108"
@@ -269,6 +260,36 @@ SNSアイコンは `index.html` 冒頭の `.icon-sprite` 内で定義してい�
   fetchpriority="high"
 >
 ```
+
+### 発表・論文の研究画像
+
+研究画像は `assets/images/publications/` に格納します。横長のWebPを基本とし、960 × 600 px前後、同じアスペクト比に揃えてください。
+
+```text
+icra2024-trajectory-prediction.webp
+si2025-dynamic-costmap.webp
+rsj2025-distracted-pedestrian.webp
+robomech2025-attention-costmap.webp
+robomech2024-pose-trajectory.webp
+robomech2022-arctic-robot.webp
+ieice2022-underwater-antenna.webp
+```
+
+現在は `.publication__media` がプレースホルダーです。画像を追加したら、対応する要素を次のような `<img>` に置き換えます。
+
+```html
+<img
+  class="publication__media"
+  src="assets/images/publications/si2025-dynamic-costmap.webp"
+  alt="Predicted pedestrian trajectory and dynamically adjusted robot costmap"
+  width="960"
+  height="600"
+  loading="lazy"
+  decoding="async"
+>
+```
+
+`alt` には論文名ではなく、画像に写っている実験・手法・結果を簡潔に記述してください。
 
 ## CVを公開する
 
@@ -305,10 +326,9 @@ PDFに住所、電話番号、個人メール、文書メタデータなど、�
 
 ```css
 :root {
-  --paper: #f4f2ec;
-  --ink: #18212a;
-  --blue: #1e57e7;
-  --amber: #f2b544;
+  --paper: #fafaf8;
+  --ink: #182027;
+  --blue: #245da7;
   --display: "IBM Plex Sans", "Noto Sans JP", sans-serif;
   --sans: "IBM Plex Sans", "Noto Sans JP", sans-serif;
 }
@@ -318,9 +338,9 @@ PDFに住所、電話番号、個人メール、文書メタデータなど、�
 
 レスポンシブ設定は主に次のメディアクエリにあります。
 
-- `max-width: 940px`: タブレット
+- `max-width: 840px`: タブレット
 - `max-width: 760px`: モバイルナビゲーションと1列化
-- `max-width: 480px`: 小型スマートフォン
+- `max-width: 600px`: 小型スマートフォンと論文画像の1列化
 - `prefers-reduced-motion`: アニメーション抑制
 - `print`: 印刷用表示
 
