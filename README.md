@@ -19,7 +19,7 @@ shunyatadano.github.io/
 │   ├── js/
 │   │   └── site.js              # モバイルメニュー、現在位置表示
 │   ├── images/
-│   │   └── .gitkeep             # プロフィール・研究画像の格納場所
+│   │   └── shunya.jpg           # ファーストビューのプロフィール画像
 │   └── files/
 │       └── .gitkeep             # CVなどダウンロードファイルの格納場所
 ├── docs/
@@ -121,7 +121,6 @@ Branch: main / (root)
 | --- | --- | --- |
 | Home | `#home` | 氏名、所属、紹介、連絡・プロフィールリンク、CV |
 | Recent News | `#news` | 最新ニュース |
-| Research | `#research` | 研究テーマ |
 | Publications | `#publications` | 発表・記事一覧 |
 | Profile | `#profile` | 学歴・受賞 |
 | Contact | `#contact` | メール・SNS・研究者プロフィール |
@@ -153,7 +152,7 @@ Branch: main / (root)
 
 ```html
 <article class="news-item">
-  <time datetime="2026-07-18">Jul 2026</time>
+  <time datetime="2026-07-18">18 Jul 2026</time>
   <div>
     <h3>News title.</h3>
     <p>Short description of the update.</p>
@@ -169,20 +168,10 @@ Branch: main / (root)
 ```
 
 - 新しいニュースを上に配置します。
-- `datetime` は `YYYY-MM-DD` または `YYYY-MM` 形式にします。
+- 表示は `18 Jul 2026` のように `DD Mon YYYY` 形式にします。
+- `datetime` は日まで含む `YYYY-MM-DD` 形式にします。
 - 外部ページを新しいタブで開く場合は `rel="noopener noreferrer"` を残します。
 - サイト内の発表へ移動する場合は `href="#pub-..."` を使用します。
-
-### 研究テーマを更新する
-
-`id="research"` 内の `.research-card` を編集します。
-
-- `.research-card__index`: `R—01` などの表示番号
-- `h3`: 研究テーマ名
-- 本文の `p`: 説明
-- `Related work`: 関連発表のアンカー
-
-カードを増減する場合は、PC・タブレット・スマートフォンの3幅でレイアウトを確認してください。
 
 ### 発表・記事を追加する
 
@@ -197,20 +186,22 @@ Branch: main / (root)
 ```html
 <li class="publication" id="pub-example2026">
   <article>
-    <div class="publication__meta">
-      <span>2026</span>
-      <span>Conference name</span>
-    </div>
     <h4>English title</h4>
     <p class="publication__original" lang="ja">日本語原題</p>
     <p><strong>Shunya Tadano</strong>, Coauthor Name</p>
     <p class="publication__venue">Conference or journal information.</p>
-    <a
-      class="publication__link"
-      href="https://doi.org/..."
-      target="_blank"
-      rel="noopener noreferrer"
-    >DOI ↗</a>
+    <div class="publication__links">
+      <a
+        href="https://doi.org/..."
+        target="_blank"
+        rel="noopener noreferrer"
+      >DOI ↗</a>
+      <a
+        href="https://www.docswell.com/s/shunyatadano/..."
+        target="_blank"
+        rel="noopener noreferrer"
+      >Slides ↗</a>
+    </div>
   </article>
 </li>
 ```
@@ -219,7 +210,10 @@ Branch: main / (root)
 
 - 本人名は `<strong>` で囲みます。
 - DOIや公式ページは、正しいことを確認できた場合だけ掲載します。
-- ニュースや研究カードから直接移動させる場合は、重複しない `id="pub-..."` を付けます。
+- 資料リンクは `.publication__links` 内に追加し、リンクが1件でも同じ構造を使います。
+- Docswell資料は内容に応じて `Poster ↗` または `Slides ↗` と表示します。
+- Docswellの公開資料一覧は <https://www.docswell.com/user/shunyatadano> で確認します。
+- ニュースから直接移動させる場合は、重複しない `id="pub-..."` を付けます。
 - 各グループ見出しの `01 item`、`06 items` などは自動計算ではないため、件数を手動で直します。
 - 発表番号、巻、号、ページ、年も元資料と照合します。
 
@@ -261,38 +255,20 @@ SNSアイコンは `index.html` 冒頭の `.icon-sprite` 内で定義してい�
 
 ### プロフィール画像
 
-推奨サイズは正方形、960 × 960 px以上です。
+現在のプロフィール画像は正方形の `assets/images/shunya.jpg`（1108 × 1108 px）です。
 
-`index.html` の `.profile-visual` プレースホルダー全体を次に置き換えます。
+プロフィール画像を差し替える場合は、画像ファイルと `index.html` の次の要素を更新します。
 
 ```html
 <img
-  class="profile-visual profile-visual--image reveal reveal--first"
-  src="assets/images/profile.webp"
+  class="profile-visual reveal reveal--first"
+  src="assets/images/shunya.jpg"
   alt="Portrait of Shunya Tadano"
-  width="960"
-  height="960"
+  width="1108"
+  height="1108"
+  fetchpriority="high"
 >
 ```
-
-### 研究画像
-
-推奨比率は16:9、1280 × 720 px以上です。
-
-各 `.research-visual` プレースホルダーを次のような画像へ置き換えます。
-
-```html
-<img
-  class="research-visual research-visual--image"
-  src="assets/images/social-navigation.webp"
-  alt="Mobile robot navigating around pedestrians"
-  width="1280"
-  height="720"
-  loading="lazy"
->
-```
-
-`alt` には「research image」のような曖昧な文ではなく、画像から読み取れる研究内容を簡潔に記述してください。
 
 ## CVを公開する
 
@@ -333,7 +309,7 @@ PDFに住所、電話番号、個人メール、文書メタデータなど、�
   --ink: #18212a;
   --blue: #1e57e7;
   --amber: #f2b544;
-  --serif: "Source Serif 4", Georgia, serif;
+  --display: "IBM Plex Sans", "Noto Sans JP", sans-serif;
   --sans: "IBM Plex Sans", "Noto Sans JP", sans-serif;
 }
 ```
@@ -418,4 +394,3 @@ git push origin main
 - [ ] PC幅とスマートフォン幅で表示確認した
 - [ ] `git status` と `git diff` でコミット対象を確認した
 - [ ] 公開後にGitHub Pagesのビルド成功と実URLを確認した
-
