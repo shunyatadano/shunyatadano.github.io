@@ -300,6 +300,10 @@ svg {
   box-shadow: 14px 14px 0 var(--blue-pale), var(--shadow);
 }
 
+img.profile-visual {
+  object-fit: cover;
+}
+
 .profile-visual::before,
 .profile-visual::after {
   position: absolute;
@@ -664,6 +668,11 @@ svg {
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background-color: var(--paper-blue);
+}
+
+img.research-visual {
+  width: 100%;
+  object-fit: cover;
 }
 
 .research-visual--navigation {
