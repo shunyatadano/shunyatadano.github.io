@@ -135,8 +135,9 @@ Branch: main / (root)
 
 - `h1`: 英語氏名
 - `.hero__role`: 所属・職位
-- `.hero__research`: 研究テーマ
-- `.hero__links`: Email、GitHub、LinkedIn、X、Google Scholar、researchmap、CV
+- `.research-tags`: 研究テーマのタグ
+- `.hero__contact`: メールアドレス、所在地（通常テキスト）
+- `.hero__links`: GitHub、LinkedIn、X、Google Scholar、researchmap、CV
 
 ### ニュースを追加する
 
@@ -145,23 +146,20 @@ Branch: main / (root)
 ```html
 <article class="news-item">
   <time datetime="2026-07-18">18 Jul 2026</time>
-  <div>
-    <h3>News title.</h3>
-    <p>Short description of the update.</p>
-  </div>
-  <a
-    class="arrow-link"
-    href="https://example.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Read more about this update"
-  >↗</a>
+  <p>
+    A paper was accepted to
+    <a href="https://example.com/" target="_blank" rel="noopener noreferrer">
+      Example Conference 2026
+    </a>.
+  </p>
 </article>
 ```
 
 - 新しいニュースを上に配置します。
 - 表示は `18 Jul 2026` のように `DD Mon YYYY` 形式にします。
 - `datetime` は日まで含む `YYYY-MM-DD` 形式にします。
+- 見出しと説明に分けず、1項目を簡潔な1文にまとめます。
+- 詳細ページがある場合は、文中の具体的な名称をリンクにします。
 - 外部ページを新しいタブで開く場合は `rel="noopener noreferrer"` を残します。
 - サイト内の発表へ移動する場合は `href="#pub-..."` を使用します。
 
@@ -215,21 +213,38 @@ Branch: main / (root)
 
 - 学歴: `aria-labelledby="education-title"` の `.profile-list`
 - 職歴: `aria-labelledby="employment-title"` の `.profile-list`
-- 受賞: `aria-labelledby="awards-title"` の `.profile-list`
+- 受賞: `aria-labelledby="awards-title"` の `.profile-list--plain`
 
 新しい項目は上に追加し、年の新しい順に並べます。
 
+EducationとEmploymentの各項目は次の順序で記述します。点と縦線は `.profile-list` のスタイルで自動的に表示され、リストの最後では縦線が止まります。
+
+```html
+<li>
+  <div>
+    <h4>Position or award title</h4>
+    <div class="profile-list__date">2026—Present</div>
+    <p>Institution or organization</p>
+    <p class="profile-list__note">Optional detail</p>
+  </div>
+</li>
+```
+
+Awardsは `.profile-list--plain` により、点と縦線を使わず、項目間の区切り線だけを表示します。
+
 ### SNS・メールを更新する
 
-同じリンクが次の場所にあります。
+SNSの同じリンクが次の場所にあります。
 
 1. Homeの `.hero__links`
 2. `<head>` 内のPerson構造化データ `sameAs`
 
-URLを変更するときは3か所を確認してください。メールアドレスは、次の場所にもあります。
+URLを変更するときは両方を確認してください。メールアドレスは、次の場所にあります。
 
 - `<meta>` ではなくJSON-LD内の `email`
-- Homeの `mailto:`
+- Homeの `.hero__contact`（リンクではなく通常テキスト）
+
+所在地はHomeの `.hero__contact` にだけ表示しています。
 
 SNSアイコンは `index.html` 冒頭の `.icon-sprite` 内で定義しています。既存サービスのリンク変更だけであれば、SVG部分を編集する必要はありません。
 
