@@ -360,12 +360,24 @@ svg {
 }
 
 .hero h1 {
+  display: flex;
+  gap: 8px 18px;
   margin-bottom: 18px;
+  align-items: baseline;
+  flex-wrap: wrap;
   font-family: var(--display);
   font-size: clamp(38px, 5vw, 50px);
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.08;
+}
+
+.hero__name-ja {
+  color: var(--ink-soft);
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.48em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
 }
 
 .hero__role {
