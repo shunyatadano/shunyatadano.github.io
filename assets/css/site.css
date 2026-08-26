@@ -898,6 +898,18 @@ img.publication__media {
     gap: 6px;
   }
 
+  .theme-toggle {
+    order: 1;
+  }
+
+  .language-switcher {
+    order: 2;
+  }
+
+  .site-nav {
+    order: 3;
+  }
+
   .language-switcher {
     font-size: 11px;
   }
