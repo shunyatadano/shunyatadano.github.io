@@ -239,6 +239,27 @@ svg {
   align-items: center;
 }
 
+.language-switcher {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  color: var(--ink-faint);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.language-switcher__link {
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.language-switcher__link:hover,
+.language-switcher__link.is-active {
+  color: var(--blue);
+}
+
 .theme-toggle {
   display: none;
   width: 38px;
@@ -875,6 +896,10 @@ img.publication__media {
 
   .site-header__controls {
     gap: 6px;
+  }
+
+  .language-switcher {
+    font-size: 11px;
   }
 
   .wordmark__name {
