@@ -218,14 +218,9 @@ svg {
 }
 
 .wordmark__mark {
-  display: grid;
   width: 28px;
   height: 28px;
-  border: 1px solid var(--line-strong);
-  place-items: center;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  object-fit: contain;
 }
 
 .wordmark__name {
