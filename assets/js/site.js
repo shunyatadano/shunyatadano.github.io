@@ -5,6 +5,7 @@
   const themeColor = document.querySelector('meta[name="theme-color"]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-menu]');
+  const menuItems = Array.from(document.querySelectorAll('.site-nav__list a'));
   const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute('href')))
@@ -27,7 +28,7 @@
     root.style.colorScheme = activeTheme;
 
     if (themeColor) {
-      themeColor.content = activeTheme === 'dark' ? '#11171c' : '#fafaf8';
+      themeColor.content = activeTheme === 'dark' ? '#1a1a1a' : '#ffffff';
     }
 
     if (themeToggle) {
@@ -65,6 +66,7 @@
     if (!menuToggle || !menu) return;
 
     menuToggle.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
     menu.classList.remove('is-open');
     document.body.classList.remove('menu-open');
 
@@ -75,8 +77,10 @@
     if (!menuToggle || !menu) return;
 
     menuToggle.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
     menu.classList.add('is-open');
     document.body.classList.add('menu-open');
+    window.setTimeout(() => menuItems[0]?.focus(), 0);
   };
 
   menuToggle?.addEventListener('click', () => {
@@ -146,7 +150,9 @@
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
-  const mobileQuery = window.matchMedia('(max-width: 760px)');
+  menu?.setAttribute('aria-hidden', 'true');
+
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
   mobileQuery.addEventListener?.('change', (event) => {
     if (!event.matches) closeMenu();
   });
