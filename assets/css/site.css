@@ -509,6 +509,11 @@ svg {
 
 .hero-link--group {
   gap: 0;
+  color: var(--ink);
+}
+
+.hero-link--group:hover {
+  text-decoration: none;
 }
 
 .hero-link--group .social-icon {
@@ -521,6 +526,7 @@ svg {
 
 .hero-link--group .hero-link {
   padding-block: 0;
+  color: var(--blue-dark);
 }
 
 .hero-link--disabled {
