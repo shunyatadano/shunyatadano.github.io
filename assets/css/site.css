@@ -507,6 +507,28 @@ svg {
   text-decoration: underline;
 }
 
+.hero-link--group {
+  gap: 0;
+  color: var(--ink);
+}
+
+.hero-link--group:hover {
+  text-decoration: none;
+}
+
+.hero-link--group .social-icon {
+  margin-right: 6px;
+}
+
+.hero-link--group > span[aria-hidden] {
+  margin-inline: 0.35em;
+}
+
+.hero-link--group .hero-link {
+  padding-block: 0;
+  color: var(--blue-dark);
+}
+
 .hero-link--disabled {
   color: var(--ink-faint);
   cursor: not-allowed;

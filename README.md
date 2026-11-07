@@ -16,6 +16,7 @@ shunyatadano.github.io/
 ├── ja/
 │   └── index.html                # 日本語版の本文とメタデータ
 ├── assets/
+│   ├── cv/                       # CV PDF（英語・日本語）
 │   ├── css/
 │   │   └── site.css             # レイアウト、色、フォント、レスポンシブ表示
 │   ├── js/
@@ -125,7 +126,7 @@ Branch: main / (root)
 
 | セクション | ID | 主な内容 |
 | --- | --- | --- |
-| Home | `#home` | 氏名、所属、研究テーマ、連絡・プロフィールリンク、CV |
+| Home | `#home` | 氏名、所属、研究テーマ、連絡・プロフィールリンク、CV (EN/JA) |
 | Recent News | `#news` | 最新ニュース |
 | Publications | `#publications` | 発表・記事一覧 |
 | Profile | `#profile` | 学歴・職歴・受賞 |
@@ -313,32 +314,18 @@ ieice2022-underwater-antenna.webp
 
 `alt` には論文名ではなく、画像に写っている実験・手法・結果を簡潔に記述してください。
 
-## CVを公開する
+## CV（履歴書）を更新する
 
-新しいCVを次の場所へ保存します。
+英語版・日本語版のPDFを `assets/cv/` に保存します。ファイル名は `yyyymmdd_cv_<en|ja>.pdf` です。
 
 ```text
-assets/files/shunya-tadano-cv.pdf
+assets/cv/20250908_cv_en.pdf
+assets/cv/20260826_cv_ja.pdf
 ```
 
 PDFに住所、電話番号、個人メール、文書メタデータなど、公開したくない情報が含まれていないことを確認してください。
 
-`index.html` の `CV — forthcoming` を表示している `<span>` を、次のリンクへ置き換えます。
-
-```html
-<a
-  class="hero-link"
-  href="assets/files/shunya-tadano-cv.pdf"
-  download
->
-  <svg class="social-icon" aria-hidden="true">
-    <use href="#icon-file"></use>
-  </svg>
-  <span>Download CV</span>
-</a>
-```
-
-ファイルを更新するときは、同じファイル名で置き換えるとHTMLを変更せずに済みます。ブラウザキャッシュを確実に更新したい場合は、ファイル名に年月を含めてHTML側も変更します。
+PDFを差し替えて日付付きのファイル名を変えた場合は、`index.html` と `ja/index.html` の `hero-link--group`（CV (EN / JA)）内の `href` を両方更新します。
 
 ## デザインを変更する
 
