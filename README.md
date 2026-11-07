@@ -16,7 +16,7 @@ shunyatadano.github.io/
 ├── ja/
 │   └── index.html                # 日本語版の本文とメタデータ
 ├── assets/
-│   ├── cv/                       # Resume PDF（英語・日本語）
+│   ├── cv/                       # CV PDF（英語・日本語）
 │   ├── css/
 │   │   └── site.css             # レイアウト、色、フォント、レスポンシブ表示
 │   ├── js/
@@ -126,7 +126,7 @@ Branch: main / (root)
 
 | セクション | ID | 主な内容 |
 | --- | --- | --- |
-| Home | `#home` | 氏名、所属、研究テーマ、連絡・プロフィールリンク、Resume (EN/JA) |
+| Home | `#home` | 氏名、所属、研究テーマ、連絡・プロフィールリンク、CV (EN/JA) |
 | Recent News | `#news` | 最新ニュース |
 | Publications | `#publications` | 発表・記事一覧 |
 | Profile | `#profile` | 学歴・職歴・受賞 |
@@ -145,7 +145,7 @@ Branch: main / (root)
 - `.hero__role`: 所属・職位
 - `.research-tags`: 研究テーマのタグ
 - `.hero__contact`: メールアドレス、所在地（通常テキスト）
-- `.hero__links`: GitHub、LinkedIn、X、Google Scholar、researchmap、Resume
+- `.hero__links`: GitHub、LinkedIn、X、Google Scholar、researchmap、CV
 
 ### ニュースを追加する
 
@@ -314,7 +314,7 @@ ieice2022-underwater-antenna.webp
 
 `alt` には論文名ではなく、画像に写っている実験・手法・結果を簡潔に記述してください。
 
-## Resume（履歴書）を更新する
+## CV（履歴書）を更新する
 
 英語版・日本語版のPDFを `assets/cv/` に保存します。ファイル名は `yyyymmdd_cv_<en|ja>.pdf` です。
 
@@ -325,7 +325,7 @@ assets/cv/20260826_cv_ja.pdf
 
 PDFに住所、電話番号、個人メール、文書メタデータなど、公開したくない情報が含まれていないことを確認してください。
 
-PDFを差し替えて日付付きのファイル名を変えた場合は、`index.html` と `ja/index.html` の `hero-link--group`（Resume: EN / JA）内の `href` を両方更新します。
+PDFを差し替えて日付付きのファイル名を変えた場合は、`index.html` と `ja/index.html` の `hero-link--group`（CV (EN / JA)）内の `href` を両方更新します。
 
 ## デザインを変更する
 

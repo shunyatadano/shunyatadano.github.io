@@ -508,7 +508,15 @@ svg {
 }
 
 .hero-link--group {
-  gap: 6px;
+  gap: 0;
+}
+
+.hero-link--group .social-icon {
+  margin-right: 6px;
+}
+
+.hero-link--group > span[aria-hidden] {
+  margin-inline: 0.35em;
 }
 
 .hero-link--group .hero-link {
