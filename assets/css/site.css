@@ -507,6 +507,14 @@ svg {
   text-decoration: underline;
 }
 
+.hero-link--group {
+  gap: 6px;
+}
+
+.hero-link--group .hero-link {
+  padding-block: 0;
+}
+
 .hero-link--disabled {
   color: var(--ink-faint);
   cursor: not-allowed;
