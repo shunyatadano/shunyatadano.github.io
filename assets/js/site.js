@@ -49,6 +49,23 @@
     }
 
     updateThemeInterface();
+
+  const newsToggle = document.querySelector('[data-news-toggle]');
+  const newsItems = Array.from(document.querySelectorAll('.news-list .news-item'));
+
+  if (newsToggle && newsItems.length > 5) {
+    const moreLabel = newsToggle.dataset.moreLabel || 'Show more';
+    const lessLabel = newsToggle.dataset.lessLabel || 'Show less';
+    newsItems.slice(5).forEach((item) => { item.hidden = true; });
+    newsToggle.hidden = false;
+
+    newsToggle.addEventListener('click', () => {
+      const isExpanded = newsToggle.getAttribute('aria-expanded') === 'true';
+      newsItems.slice(5).forEach((item) => { item.hidden = isExpanded; });
+      newsToggle.setAttribute('aria-expanded', String(!isExpanded));
+      newsToggle.textContent = isExpanded ? moreLabel : lessLabel;
+    });
+  }
   };
 
   themeToggle?.addEventListener('click', () => {
