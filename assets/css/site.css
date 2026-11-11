@@ -615,6 +615,37 @@ svg {
   color: var(--blue);
 }
 
+.news-item[hidden] {
+  display: none;
+}
+
+.news-more {
+  margin-top: 16px;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--blue-dark);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.news-more:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.news-more:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.news-more[hidden] {
+  display: none;
+}
+
 /* Publications */
 .publication-group {
   display: grid;
